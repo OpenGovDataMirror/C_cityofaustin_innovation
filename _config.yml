@@ -1,0 +1,100 @@
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  extensions:
+  - with_toc_data
+
+excerpt_separator: <!-- more -->
+exclude:
+- node_modules
+- deploy
+- README.md
+- LICENSE.md
+- CONTRIBUTING.md
+- todo.txt
+- vendor
+- go
+- script
+- Gemfile
+- Gemfile.lock
+
+gems:
+  - jekyll-sitemap
+  - jekyll-archives
+  - jekyll-redirect-from
+  - jekyll-feed
+
+jekyll-archives:
+  enabled:
+    - 'tags'
+  layout: tag_index
+  permalinks:
+    tag: '/tags/:name/'
+
+sass:
+  sass_dir: assets/_sass
+
+permalink: pretty
+tag_dir: tags
+tag_title_prefix: "#"
+
+# use where a full URL is appropriate (e.g. RSS, OG tags)
+url: https://cityofaustin.github.io/innovation/
+
+# metadata
+title: City of Austin Office of Innovation
+name: City of Austin Office of Innovation
+description: "City of Austin Office of Innovation"
+timezone: America/Chicago
+
+# blog archive at /blog
+paginate: 5
+paginate_path: "blog/page/:num"
+
+#emoji
+gems:
+  - jemoji
+
+emoji:
+  src: "/assets/images"
+
+rss_limit: 20
+
+future: false
+
+# defaults
+defaults:
+  -
+    scope:
+      type: "posts"
+    values:
+      layout: "post"
+
+  -
+    scope:
+      collection: team
+    values:
+      layout: profile
+
+# collections
+collections:
+  team:
+    permalink: /team/:name/
+    output: true
+  press:
+    output: true
+    permalink: /press/:name/
+  cards:
+    output: true
+    permalink: /card/:name/
+
+full_rebuild: true
+
+baseurl: https://cityofaustin.github.io/innovation
+
+feed:
+  path: /feed/index.xml
+
+
+
